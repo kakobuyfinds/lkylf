@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#143729">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>KakoBuy spreadsheet | Product Finds, QC &amp; Cost Guide</title>
+  <meta name="description" content="Browse real HipobuyFind listings in this independent KakoBuy spreadsheet guide. Filter finds, check warehouse photos and estimate the total cost before ordering.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="KakoBuy spreadsheet | Product Finds, QC &amp; Cost Guide">
+  <meta property="og:description" content="Browse HipobuyFind listings and compare item prices, quality checks and delivered costs.">
+  <!-- Search results reviewed: spreadsheetkakobuy.com (search and QC counts), spreadsheet-kakobuy.com (row checks and shipping quotes), rep.tools/guides/kakobuy-spreadsheet (ordering guide). The direct Google results page showed a verification challenge, so exact Google ranks were not verified. -->
+  <!-- Index submission pending. Publish index.html at a public URL, then request indexing for that URL in Google Search Console > URL Inspection and Bing Webmaster Tools > URL Submission. Add the final self-referencing canonical URL once the address is known. -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"KakoBuy spreadsheet",
+    "inLanguage":"en",
+    "description":"Independent buying guide with selected HipobuyFind listings, a warehouse photo checklist and a delivered cost estimator."
+  }
+  </script>
+  <style>
+    *{box-sizing:border-box}
+    :root{color-scheme:light;--ink:#143729;--muted:#4c6156;--line:#cad9d0;--paper:#f5f5ed;--green:#23583f;--white:#fff}
+    body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.6 system-ui,sans-serif}
+    a{color:inherit;text-underline-offset:3px}
+    :focus-visible{outline:3px solid #a35828;outline-offset:4px}
+    [hidden]{display:none!important}
+    .wrap{width:min(1120px,calc(100% - 36px));margin-inline:auto}
+    .skip{position:absolute;left:12px;top:12px;transform:translateY(-160%);background:#fff;padding:10px;z-index:1}
+    .skip:focus{transform:none}
+    header{background:var(--ink);color:#f8f9ef}
+    nav{display:flex;gap:1.1rem;justify-content:center;flex-wrap:wrap;padding:1rem 0;border-bottom:1px solid #ffffff35}
+    .hero{padding:clamp(52px,9vw,105px) 0;text-align:center}
+    h1,h2,h3,p{margin:0}
+    h1,h2{font-family:Georgia,serif;line-height:1.08;font-weight:500}
+    h1{font-size:clamp(2.7rem,8.4vw,6.4rem);letter-spacing:-.045em}
+    h2{font-size:clamp(2rem,5vw,3.1rem);letter-spacing:-.035em}
+    h3{font-size:1.08rem;line-height:1.35}
+    .hero p{max-width:58ch;margin:1.25rem auto;color:#dceadd}
+    .actions{display:flex;justify-content:center;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+    .cta{display:inline-flex;align-items:center;min-height:46px;padding:.5rem 1.15rem;border:1px solid #dceadd;border-radius:8px;text-decoration:none;font-weight:700}
+    .cta:first-child{background:#e4f2ae;color:var(--ink);border-color:#e4f2ae}
+    .cta:hover{box-shadow:0 0 0 2px #dceadd}
+    main{padding:2.75rem 0 4rem}
+    section+section{margin-top:3.5rem}
+    section>p{margin-top:.7rem;max-width:76ch;color:var(--muted)}
+    .grid,.guides{display:grid;gap:1rem;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid{list-style:none;margin:1rem 0 0;padding:0}
+    .card{display:block;height:100%;text-decoration:none;overflow:hidden;background:var(--white);border:1px solid var(--line);border-radius:12px}
+    .card:hover h3{text-decoration:underline;text-underline-offset:3px}
+    .card img{display:block;width:100%;aspect-ratio:4/3;height:auto;object-fit:contain;background:#edf1ea}
+    .info{padding:1rem}
+    .meta,.note{font-size:.9rem;color:var(--muted)}
+    .info h3{margin:.25rem 0 .5rem}
+    .price{font-variant-numeric:tabular-nums;font-weight:750}
+    .controls{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.8rem;margin-top:1.25rem}
+    label{display:grid;gap:.25rem;font-weight:650}
+    input,select,button{width:100%;min-width:0;min-height:44px;font:inherit}
+    input,select{padding:.45rem .65rem;border:1px solid #83988c;border-radius:7px;background:#fff;color:var(--ink)}
+    .guides{margin-top:1rem}
+    article,form{padding:1.1rem;background:#fff;border:1px solid var(--line);border-radius:12px}
+    article p{margin-top:.5rem;color:var(--muted)}
+    form{margin-top:1rem}
+    .costs{display:grid;gap:.8rem;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .form-actions{display:flex;align-items:center;flex-wrap:wrap;gap:1rem;margin-top:1rem}
+    button{width:auto;padding:.45rem 1rem;border:0;border-radius:7px;color:#fff;background:var(--green);cursor:pointer}
+    output{font-size:1.2rem;font-weight:750}
+    details{border-bottom:1px solid var(--line);padding:.9rem 0}
+    summary{cursor:pointer;font-weight:700}
+    details p{max-width:75ch;margin:.5rem 0 0;color:var(--muted)}
+    footer{padding:1.2rem 0;text-align:center;background:var(--ink);color:#f8f9ef}
+    @media(max-width:760px){.grid,.costs{grid-template-columns:repeat(2,minmax(0,1fr))}.guides{grid-template-columns:1fr}.controls{grid-template-columns:1fr 1fr}.controls label:first-child{grid-column:1/-1}}
+    @media(max-width:390px){.grid{grid-template-columns:1fr}}
+  </style>
+<link rel="canonical" href="https://kakobuyfinds.github.io/lkylf/">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Page navigation">
+        <a href="#catalog">Catalog</a>
+        <a href="#checks">Ordering guide</a>
+        <a href="#cost">Cost estimator</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="hero">
+        <h1>KakoBuy spreadsheet</h1>
+        <p>A KakoBuy spreadsheet helps you shortlist marketplace finds before ordering through a shopping agent. This independent guide pairs a selection from HipobuyFind with steps for checking seller listings, warehouse photos and the delivered cost.</p>
+        <div class="actions">
+          <a class="cta" href="https://hipobuyfind.com">KakoBuy spreadsheet</a>
+          <a class="cta" href="https://hipobuyfind.com">Buy it now</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <section id="catalog" aria-labelledby="catalog-heading">
+      <h2 id="catalog-heading">HipobuyFind product catalog</h2>
+      <p>Selected listings from <a href="https://hipobuyfind.com">HipobuyFind</a>. Prices are in Chinese yuan and reflect the catalog snapshot. Open each listing for the current price, available variants and source link.</p>
+      <div class="controls" id="controls" hidden>
+        <label>Search by name or item ID<input id="query" type="search" placeholder="Hoodie or 154917"></label>
+        <label>Category<select id="category"><option value="">All categories</option><option>Shoes</option><option>Hoodies</option><option>T-shirts</option><option>Jackets</option><option>Bags</option></select></label>
+        <label>Sort by<select id="sort"><option value="default">Catalog order</option><option value="asc">Price: low to high</option><option value="desc">Price: high to low</option></select></label>
+      </div>
+      <p id="count" class="note" role="status" hidden></p>
+      <ul class="grid" id="products">
+        <li data-category="Shoes" data-price="450">
+          <a class="card" href="https://hipobuyfind.com/goods-148188.html">
+            <img src="https://si.geilicdn.com/open1700230128-1234478995-6d07000001987b436b390a22d249_800_800.jpg" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <div class="info"><p class="meta">Shoes · 148188</p><h3>Black Canvas Low-Top Sneakers with Gum Sole</h3><p class="price">¥450.00</p></div>
+          </a>
+        </li>
+        <li data-category="Hoodies" data-price="300">
+          <a class="card" href="https://hipobuyfind.com/goods-154936.html">
+            <img src="https://si.geilicdn.com/open1792148229-1234478995-0daf00000196c1a57bec0aa0834c_1290_1290.jpg" alt="" width="1290" height="1290" loading="lazy" decoding="async">
+            <div class="info"><p class="meta">Hoodies · 154936</p><h3>Gray Hoodie</h3><p class="price">¥300.00</p></div>
+          </a>
+        </li>
+        <li data-category="Hoodies" data-price="170">
+          <a class="card" href="https://hipobuyfind.com/goods-154917.html">
+            <img src="https://si.geilicdn.com/open1792148229-1234478995-76d100000196f413b04f0a8133b0_800_800.jpg" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <div class="info"><p class="meta">Hoodies · 154917</p><h3>Fleece-Lined Hoodie</h3><p class="price">¥170.00</p></div>
+          </a>
+        </li>
+        <li data-category="T-shirts" data-price="105">
+          <a class="card" href="https://hipobuyfind.com/goods-154920.html">
+            <img src="https://si.geilicdn.com/open1792148229-1234478995-09a000000196efa4b3cc0aa0834c_800_800.jpg" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <div class="info"><p class="meta">T-shirts · 154920</p><h3>Graphic Short-Sleeve T-Shirt</h3><p class="price">¥105.00</p></div>
+          </a>
+        </li>
+        <li data-category="Jackets" data-price="157.14">
+          <a class="card" href="https://hipobuyfind.com/goods-154851.html">
+            <img src="https://si.geilicdn.com/wdseller1489596767-2b4400000193c17bed690a210139_697_1024.jpg" alt="" width="697" height="1024" loading="lazy" decoding="async">
+            <div class="info"><p class="meta">Jackets · 154851</p><h3>Hooded Quick-Dry Jacket</h3><p class="price">¥157.14</p></div>
+          </a>
+        </li>
+        <li data-category="Bags" data-price="300">
+          <a class="card" href="https://hipobuyfind.com/goods-154846.html">
+            <img src="https://si.geilicdn.com/pcitem901921648802-198100000195895893e60a231316_939_939.jpg" alt="" width="939" height="939" loading="lazy" decoding="async">
+            <div class="info"><p class="meta">Bags · 154846</p><h3>Multi-Pocket Flap Backpack</h3><p class="price">¥300.00</p></div>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section id="checks" aria-labelledby="checks-heading">
+      <h2 id="checks-heading">How to check a find before ordering</h2>
+      <div class="guides">
+        <article><h3>Check the original listing</h3><p>Open the product card and look for the original seller link. If you plan to use KakoBuy, check whether it accepts that link and carries your size and color. Save the seller’s measurements and item ID before ordering.</p></article>
+        <article><h3>Review warehouse photos</h3><p>If your agent provides quality-control (QC) photos, compare the received color, labels and measurements with your order. For a hoodie, ask for a tape-measure photo across the chest and compare it with a hoodie you own.</p></article>
+        <article><h3>Compare shipping quotes</h3><p>Use the same destination, parcel weight and dimensions when comparing lines. Ask which weight the quote uses and whether it includes taxes or extra charges. Check the return window before approving shipment.</p></article>
+      </div>
+    </section>
+    <section id="cost" aria-labelledby="cost-heading">
+      <h2 id="cost-heading">Estimate the delivered cost</h2>
+      <p>Enter your quotes in CNY. Convert any fees quoted in another currency before adding them.</p>
+      <form id="estimator" hidden>
+        <div class="costs">
+          <label>Item subtotal<input name="item" type="number" min="0" step="0.01" inputmode="decimal" required></label>
+          <label>Delivery to warehouse<input name="domestic" type="number" min="0" step="0.01" inputmode="decimal"></label>
+          <label>Agent and payment fees<input name="fees" type="number" min="0" step="0.01" inputmode="decimal"></label>
+          <label>International shipping<input name="shipping" type="number" min="0" step="0.01" inputmode="decimal"></label>
+          <label>Estimated duties and taxes<input name="tax" type="number" min="0" step="0.01" inputmode="decimal"></label>
+        </div>
+        <div class="form-actions"><button type="submit">Calculate estimate</button><output id="total" role="status"></output></div>
+        <p class="note">Blank fees count as zero in the estimate. Check each fee before paying.</p>
+      </form>
+      <noscript><p>Add the item subtotal, delivery to the warehouse, agent and payment fees, international shipping, and estimated duties and taxes.</p></noscript>
+    </section>
+    <section id="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">KakoBuy spreadsheet FAQ</h2>
+      <details><summary>Where do the product links go?</summary><p>Each card opens its HipobuyFind listing. Both main links open the HipobuyFind homepage.</p></details>
+      <details><summary>Can I use these listings with KakoBuy?</summary><p>Open a listing and find its original marketplace URL. Paste that URL into KakoBuy to see whether the item and your variant can be ordered.</p></details>
+      <details><summary>Why is the item price lower than my delivered total?</summary><p>The displayed price is for the item. Depending on the order, you may also pay for delivery to the warehouse, agent or payment fees, international shipping, and duties or taxes.</p></details>
+      <details><summary>What should I do if a link or variant is unavailable?</summary><p>Search by the item name or browse the same category on HipobuyFind. Compare the new seller’s photos, size chart and return terms before choosing a replacement.</p></details>
+    </section>
+  </main>
+  <footer><div class="wrap">Independent shopping guide · Catalog source <a href="https://hipobuyfind.com">HipobuyFind</a></div></footer>
+  <script>
+    const controls = document.querySelector('#controls');
+    const query = document.querySelector('#query');
+    const category = document.querySelector('#category');
+    const sort = document.querySelector('#sort');
+    const catalog = document.querySelector('#products');
+    const count = document.querySelector('#count');
+    const products = Array.from(catalog.children);
+    const formatter = new Intl.NumberFormat('en', {style:'currency', currency:'CNY'});
+
+    function updateCatalog() {
+      const terms = query.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+      const ordered = [...products];
+      if (sort.value !== 'default') {
+        const direction = sort.value === 'asc' ? 1 : -1;
+        ordered.sort((a, b) => direction * (Number(a.dataset.price) - Number(b.dataset.price)));
+      }
+      let visible = 0;
+      for (const item of ordered) {
+        const text = item.textContent.toLowerCase();
+        item.hidden = Boolean(category.value && category.value !== item.dataset.category) ||
+          !terms.every(term => text.includes(term));
+        if (!item.hidden) visible++;
+      }
+      catalog.append(...ordered);
+      count.textContent = visible ? `${visible} of ${products.length} products` : 'No matching products. Try another search or category.';
+    }
+
+    controls.hidden = false;
+    count.hidden = false;
+    query.addEventListener('input', updateCatalog);
+    category.addEventListener('change', updateCatalog);
+    sort.addEventListener('change', updateCatalog);
+    updateCatalog();
+
+    const estimator = document.querySelector('#estimator');
+    const total = document.querySelector('#total');
+    estimator.hidden = false;
+    estimator.addEventListener('input', () => { total.textContent = ''; });
+    estimator.addEventListener('submit', event => {
+      event.preventDefault();
+      const cents = Array.from(new FormData(estimator).values())
+        .reduce((sum, value) => sum + Math.round(Number(value) * 100), 0);
+      total.textContent = 'Estimated total: ' + formatter.format(cents / 100);
+    });
+  </script>
+</body>
+</html>
